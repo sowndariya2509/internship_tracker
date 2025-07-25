@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internship Records</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Internship track</h2>
+
+        <a href="/add" class="btn btn-success float-end mb-3">Add Intern</a>
+
+        {% if var %}
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Reg No</th>
+                    <th>Department</th>
+                    <th>Company</th>
+                    <th>Duration</th>
+                    <th>Domain</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in var %}
+                <tr>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.regno }}</td>
+                    <td>{{ i.department }}</td>
+                    <td>{{ i.company }}</td>
+                    <td>{{ i.duration }}</td>
+                    <td>{{ i.domain }}</td>
+                    <td>{{ i.mail }}</td>
+                    <td>
+                        <a href="{% url 'edit' i.regno %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'delete' i.regno %}" onclick="return confirm('Delete this intern?')" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-info">No internship records found.</div>
+        {% endif %}
+    </div>
+</body>
+</html>

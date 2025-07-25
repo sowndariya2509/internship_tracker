@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Intern</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Add New Intern</h2>
+        <form action="/addsave/" method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="regno" class="form-label">Register No:</label>
+                <input type="text" class="form-control" id="regno" name="regno" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="department" class="form-label">Department:</label>
+                <input type="text" class="form-control" id="department" name="department" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="company" class="form-label">Company:</label>
+                <input type="text" class="form-control" id="company" name="company" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="duration" class="form-label">Duration:</label>
+                <input type="text" class="form-control" id="duration" name="duration" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="domain" class="form-label">Domain:</label>
+                <input type="text" class="form-control" id="domain" name="domain" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="mail" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="mail" name="mail" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Intern</button>
+            <a href="/" class="btn btn-secondary ms-2">Back</a>
+        </form>
+    </div>
+</body>
+</html>
